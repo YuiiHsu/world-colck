@@ -1,0 +1,52 @@
+.App {
+  width: 910px;
+  height: 728px;
+  background: #E5E5E5;
+  color: #FFFFFF;
+  padding: 72px 0 0 373px;
+
+  .title {
+    height: 78px;
+    width: 535px;
+    color: #000000;
+    border: 10px solid #000000;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 30px;
+    font: normal normal 800 68px/68px Open Sans;
+    display: flex;
+    align-items: center;
+  }
+
+  .whiteBackground {
+    width: 460px;
+    height: 84px;
+    border: 2px solid #000000;
+    padding: 16px 40px 0 40px;
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    color: #000000;
+  }
+    .blackBackground {
+      width: 460px;
+      height: 84px;
+      border: 2px solid #000000;
+      padding: 16px 40px 0 40px;
+      display: flex;
+      justify-content: space-between;
+      background: #000000;
+      color: #FFFFFF;
+    }
+
+    .date {
+      font: normal normal bold 36px/36px Open Sans;
+      p{
+        font: italic normal bold 16px/16px Open Sans;
+      }
+    }
+  
+    .time {
+      font: normal normal bold 72px/72px Open Sans;
+    }
+  }
