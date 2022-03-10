@@ -3,41 +3,30 @@ import style from './App.module.scss';
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
-  const [clockList, setClockList] = useState({
-    newYork: {
+  const [clockList, setClockList] = useState([
+    {
       city: "NEW YORK",
       timeZone: 'America/New_York',
-      date: '',
-      time: ''
     },
-    london: {
+    {
       city: "LONDON",
       timeZone: 'Europe/London',
-      date: '',
-      time: ''
     },
-    bangkok: {
+    {
       city: "BANGKOK",
       timeZone: 'Asia/Bangkok',
-      date: '',
-      time: ''
     },
-    taiwan: {
+    {
       city: "TAIWAN",
       timeZone: 'Asia/Taipei',
-      date: '',
-      time: ''
     },
-    sydney: {
+    {
       city: "SYDNEY",
       timeZone: 'Australia/Sydney',
-      date: '',
-      time: ''
     }
-  });
+  ]);
 
   const getDate = (clockData) => {
-    const dataList = clockData;
     const option = {
       year: "numeric",
       month: "short",
@@ -47,19 +36,21 @@ function App() {
       timeZone: ''
     }
 
-    Object.values(dataList).forEach(data => {
-
+    const dataList = [];
+    Object.values(clockData).forEach(data => {
+      const newData = {};
       option.timeZone = data.timeZone;
 
       // 取得當地時間 e.g., Feb 23, 2022, 05:28 AMs
       const currentDate = new Date().toLocaleString("en-us", option).split(', ');
-      const newData = data;
       const dateArray = currentDate[0].split(' ');
       const time = currentDate[2] ? currentDate[2].substring(0, 5) : '';
 
-      data.date = `${dateArray[1]} ${dateArray[0]} ${currentDate[1]}`;
-      data.time = `${time}`;
-      // Object.assign(newClockData, newData);
+      newData.city = data.city;
+      newData.timeZone = data.timeZone;
+      newData.date = `${dateArray[1]} ${dateArray[0]}. ${currentDate[1]}`;
+      newData.time = `${time}`;
+      dataList.push(newData);
     })
 
     setClockList(dataList);
