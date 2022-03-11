@@ -63,7 +63,8 @@ function App() {
    * @returns 是否為黑色背景
    */
   const isBlackBeground = (clock) => {
-    return clock === clockList.newYork || clock === clockList.sydney;
+    const index = clockList.findIndex(item => item.city === clock.city)
+    return index === 0 || index === clockList.length - 1;
   }
 
 
