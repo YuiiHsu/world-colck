@@ -32,6 +32,7 @@ function App() {
       month: "short",
       day: "2-digit",
       hour: "2-digit",
+      hour12: false,
       minute: "2-digit",
       timeZone: ''
     }
